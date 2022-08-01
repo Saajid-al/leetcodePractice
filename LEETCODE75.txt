@@ -1,0 +1,21 @@
+LEETCODE 75
+
+TWO SUM : 
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> check = new HashMap<Integer, Integer>();
+        int remainder = 0;
+        
+        for(int i=0;i<nums.length;i++) { 
+            remainder = target-nums[i];
+            if(check.containsKey(remainder)) { 
+                return new int[]{check.get(remainder), i};
+                
+            }
+            check.put(nums[i],i) ;  
+
+        }
+     return null;   
+    }
+}
